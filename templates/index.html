@@ -7,14 +7,37 @@
     <title>First Flask</title>
 </head>
 <body>
-    <h1>All My Friends</h1>
-{% for one_friend in all_friends %}
-    <p>First Name: {{one_friend.first_name}}</p>
-    <p>Last Name: {{one_friend.last_name}}</p>
-    <p>Occupation: {{one_friend.occupation}}</p>
-    <hr>
-{% endfor %}
 
+    <h1>All My Friends</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Occupation</td>
+                <td>Time Created</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for one_friend in all_friends %}
+            <tr>
+                <td>{{one_friend.id}}</td>
+                <td>{{one_friend.first_name}}</td>
+                <td>{{one_friend.last_name}}</td>
+                <td>{{one_friend.occupation}}</td>
+                <td>{{one_friend.created_at}}</td>
+                <td><a href='/friends/view/{{ one_friend.id }}'>View</a> 
+                    <a href='/friends/edit/{{ one_friend.id }}'>Edit</a>
+                    <a href='/friends/delete/{{ one_friend.id }}'>Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <a href="/add_friend">Add a new user</a>
+
+
 </body>
 </html>

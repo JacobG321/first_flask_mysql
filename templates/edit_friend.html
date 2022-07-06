@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/friends/{{ this_friend.id }}/edit_friend_in_db" method="POST">
+        <h3>Edit Friend {{ this_friend.id }}</h3>
+        <a href="/">Home</a>
+        <div>
+            <label>First Name</label>
+            <input type="text" name="first_name" value="{{ this_friend.first_name }}">
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="{{ this_friend.last_name }}">
+        </div>
+        <div>
+            <label>Occupation</label>
+            <input type="text" name="occupation" value="{{ this_friend.occupation }}">
+        </div>
+        <input type="submit" value="Edit friend">
+    </form>
+</body>
+</html>
